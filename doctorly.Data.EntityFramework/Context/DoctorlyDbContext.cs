@@ -6,6 +6,8 @@ namespace doctorly.Data.EntityFramework.Context
     public class DoctorlyDbContext : DbContext
     {
         public DbSet<EventEntity> Events { get; set; }
+        public DbSet<DoctorEntity> Doctors { get; set; }
+        public DbSet<PatientEntity> Patients { get; set; }
 
         public DoctorlyDbContext(DbContextOptions<DoctorlyDbContext> options) : base(options)
         {

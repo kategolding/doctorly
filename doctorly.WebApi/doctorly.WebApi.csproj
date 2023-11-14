@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\doctorly.Core\doctorly.Core.csproj" />
+    <ProjectReference Include="..\doctorly.Data.EntityFramework\doctorly.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\doctorly.Domain\doctorly.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
