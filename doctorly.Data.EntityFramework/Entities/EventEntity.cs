@@ -46,6 +46,16 @@ namespace doctorly.Data.EntityFramework.Entities
             };
         }
 
+        public void Update(EventEntity updateEntity)
+        {
+            this.Title = updateEntity.Title;
+            this.StartTime = updateEntity.StartTime;
+            this.EndTime = updateEntity.EndTime;
+            //Once there is security, need to pass in and set user
+            //this.UpdatedBy = updateEntity.UpdatedBy;
+            this.UpdatedOnUtc = DateTime.UtcNow;
+            
+        }
         #endregion Mapping Methods
     }
 }

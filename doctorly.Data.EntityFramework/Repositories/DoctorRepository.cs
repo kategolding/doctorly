@@ -1,11 +1,16 @@
 ﻿using doctorly.Core.Models;
 using doctorly.Core.ServiceInterfaces;
+using doctorly.Data.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace doctorly.Data.EntityFramework.Repositories
 {
     public class DoctorRepository : BaseRepository, IDoctorRepository
     {
+        public DoctorRepository(DoctorlyDbContext context)
+        {
+            _context = context;
+        }
         public Doctor? Get(int id)
         {
             return _context.Doctors

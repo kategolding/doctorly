@@ -4,6 +4,11 @@ namespace doctorly.Data.EntityFramework.Repositories
 {
     public abstract class BaseRepository
     {
-        protected readonly DoctorlyDbContext _context;
+        protected DoctorlyDbContext _context { get; set; }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _context.SaveChangesAsync() >= 0);
+        }
     }
 }
